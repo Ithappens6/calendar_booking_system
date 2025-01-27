@@ -25,6 +25,7 @@ class UserListCreateView(APIView):
     # decorate with swagger_auto_schema for this get method
     @swagger_auto_schema(
         operation_description="Get all users",
+        tags=['1.Users'],
         responses={200: UserSerializer(many=True)}
     )
     def get(self, request):
@@ -34,6 +35,7 @@ class UserListCreateView(APIView):
 
     @swagger_auto_schema(
         operation_description="Create a new user",
+        tags=['1.Users'],
         request_body=UserSerializer,
         responses={201: UserSerializer()}
     )
@@ -51,6 +53,7 @@ class UserDetailView(APIView):
     """
     @swagger_auto_schema(
         operation_description="Get a user by ID",
+        tags=['1.Users'],
         responses={200: UserSerializer()}
     )
     def get(self, request, pk):
@@ -63,6 +66,7 @@ class UserDetailView(APIView):
 
     @swagger_auto_schema(
         operation_description="Update a user by ID",
+        tags=['1.Users'],
         request_body=UserSerializer,
         responses={200: UserSerializer()}
     )
@@ -79,6 +83,7 @@ class UserDetailView(APIView):
 
     @swagger_auto_schema(
         operation_description="Delete a user by ID",
+        tags=['1.Users'],
         responses={204: "No content"}
     )
     def delete(self, request, pk):
@@ -97,6 +102,7 @@ class SetAvailabilityView(APIView):
     """
     @swagger_auto_schema(
         operation_description="Set availability for a calendar owner",
+        tags=['2.Set-availability'],
         request_body=SetAvailabilitySerializer,
         responses={201: "Availability set successfully"}
     )
@@ -115,6 +121,7 @@ class ListMeetingsView(APIView):
     """
     @swagger_auto_schema(
         operation_description="List all meetings for a calendar owner",
+        tags=['4.Meetings'],
         manual_parameters=[
             openapi.Parameter(
                 name='start_date',
@@ -177,6 +184,7 @@ class SearchAvailableSlotsView(APIView):
     """
     @swagger_auto_schema(
         operation_description="Search available slots for a calendar owner on a specific date",
+        tags=['3.Calendar'],
         manual_parameters=[
             openapi.Parameter(
                 name='date',
@@ -249,6 +257,7 @@ class BookAppointmentView(APIView):
     API to book an appointment for a given calendar owner on a specific date and time slot."""
     @swagger_auto_schema(
         operation_description="Book an appointment for a calendar owner on a specific date and time slot",
+        tags=['3.Calendar'],
         request_body=MeetingSerializer,
         responses={201: MeetingSerializer()}
     )

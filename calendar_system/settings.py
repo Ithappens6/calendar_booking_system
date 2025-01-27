@@ -141,3 +141,9 @@ REST_FRAMEWORK = {
     # 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 
+SWAGGER_SETTINGS = {
+    'TAGS_SORTER': 'alpha',
+    # sort each method in tag by operationId
+    'OPERATIONS_SORTER': 'alpha',
+}
+
