@@ -50,7 +50,7 @@ class SetAvailabilitySerializer(serializers.Serializer):
                 raise serializers.ValidationError(
                     "Each availability must have either 'day_of_week' or 'specific_date'."
                 )
-            if day_of_week and specific_date:
+            if day_of_week is not None and specific_date:
                 raise serializers.ValidationError(
                     "Do not provide both 'day_of_week' and 'specific_date' in one entry."
                 )
