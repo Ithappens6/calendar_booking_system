@@ -8,7 +8,7 @@ This project implements a simple calendar booking system, allowing Calendar Owne
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/Ithappens6/calendar_booking_system.git
 cd calendar_booking_system
 ```
 
