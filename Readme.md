@@ -29,7 +29,12 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Run the Application
+### 5. Create Cache table
+```bash
+python manage.py createcachetable
+```
+
+### 6. Run the Application
 ```bash
 python manage.py runserver
 ```
